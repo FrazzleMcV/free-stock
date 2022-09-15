@@ -15,6 +15,8 @@ In repo root
 Once this is done then the api will be available on ` http://localhost:6023/claim-free-share`
 
 ## How to run tests
+Run `npm install`
+
 For unit tests in the repo root run `npm test`.
 
 
