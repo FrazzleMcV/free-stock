@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  free-stocks:
+    build:
+      context: '.'
+      dockerfile: 'Dockerfile'
+    volumes:
+      - /usr/src/app/
+      - /usr/src/app/node_modules # To not mount the local node_modules
+    ports:
+      - 6023:6023
+      - 5001:5001 # Debugger port
+    environment:
+      PORT: 6023
+      LOW_BAND_PERCENT: 95
+      MID_BAND_PERCENT: 3
+      LOW_BAND_MIN: 3
+      LOW_BAND_MAX: 10
+      MID_BAND_MAX: 25
+      HIGH_BAND_MAX: 200
+      USE_CPI: 'false'
+    command: npm start
